@@ -1,0 +1,32 @@
+<h6>Single Team</h6>
+{{!-- <h3>Welcome {{name}}</h3> --}}
+<p>This is the information of the team selected</p>
+{{#if team}}
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Foundation Date</th>
+                <th>Website</th>
+                <th>National Cups</th>
+                <th>International Cups</th>
+                <th>Stadium Name</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{team.name}}</td>
+                <td>{{team.foundationDate}}</td>
+                <td>{{team.website}}</td>
+                <td>{{team.nationalCups}}</td>
+                <td>{{team.internationalCups}}</td>
+                <td>{{team.stadiumName}}</td>
+                <td>{{team.city}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{{else}}
+<p>The team does not have information</p>
+{{/if}}

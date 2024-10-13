@@ -1,0 +1,300 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "My API",
+    "description": "Sports API",
+    "version": "1.0.0"
+  },
+  "host": "webserviceswinter24.onrender.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/teams/add": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/teams/": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Add new team.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "any"
+                },
+                "foundationDate": {
+                  "type": "string",
+                  "example": "April 28 1929"
+                },
+                "website": {
+                  "type": "string",
+                  "example": "https://any.com/"
+                },
+                "nationalCups": {
+                  "type": "number",
+                  "example": 0
+                },
+                "internationalCups": {
+                  "type": "number",
+                  "example": 0
+                },
+                "stadiumName": {
+                  "type": "string",
+                  "example": "any"
+                },
+                "city": {
+                  "type": "string",
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "412": {
+            "description": "Precondition Failed"
+          }
+        }
+      }
+    },
+    "/teams/edit/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "200": {
+            "description": "Success",
+            "content":
+            "application/json",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+          }
+        }
+      }
+    },
+    "/teams/{id}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Add new team.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "any"
+                },
+                "foundationDate": {
+                  "type": "string",
+                  "example": "April 28 1929"
+                },
+                "website": {
+                  "type": "string",
+                  "example": "https://any.com/"
+                },
+                "nationalCups": {
+                  "type": "number",
+                  "example": 0
+                },
+                "internationalCups": {
+                  "type": "number",
+                  "example": 0
+                },
+                "stadiumName": {
+                  "type": "string",
+                  "example": "any"
+                },
+                "city": {
+                  "type": "string",
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "200": {
+            "description": "Successful update",
+            "content":
+            "application/json",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string",
+                    "example": "Team updated successfully"
+                  }
+                }
+              }
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/login/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/dashboard/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/auth/google": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/auth/google/callback": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "OAuth2": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/auth/logout": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "securitySchemes": {
+    "OAuth2": {
+      "type": "oauth2",
+      "description": "This is a test",
+      "flows": {
+        "implicit": {
+          "authorizationUrl": "http://localhost:8080/oauth/authorize",
+          "scopes": {
+            "read": "Grants read access",
+            "write": "Grants write access",
+            "admin": "Grants access to admin operations"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<h6>Dashboard</h6>
+<h3>Welcome {{name}}</h3>
+<p>These are your saved teams</p>
+{{#if teams}}
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each teams}}
+                <tr>
+                    {{!-- <td><a href="/teams/{{_id}}"></a>{{name}}</td> --}}
+                    <td><a href="/teams/{{_id}}">{{name}}</a></td>
+                    <td>
+                        <a href="/teams/edit/{{_id}}" class="btn btn-float"><i class="fas fa-edit"></i></a>
+                        <form action="/teams/{{_id}}" method="POST" id="delete-form">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn red">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+{{else}}
+<p>You have not added any teams</p>
+{{/if}}

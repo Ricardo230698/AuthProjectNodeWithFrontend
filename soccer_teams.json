@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Emelec",
+        "foundationDate": "April 28 1929",
+        "website": "https://emelec.com.ec/",
+        "nationalCups": "14",
+        "internationalCups": "0",
+        "stadiumName": "George Capwell",
+        "city": "Guayaquil"
+    },
+    {
+        "name": "Barcelona",
+        "foundationDate": "May 01 1920",
+        "website": "https://www.barcelonasc.com.ec/",
+        "nationalCups": "16",
+        "internationalCups": "0",
+        "stadiumName": "Monumental",
+        "city": "Guayaquil"
+    },
+    {
+        "name": "Liga de Quito",
+        "foundationDate": "January 31 2006",
+        "website": "https://liga.com.ec/",
+        "nationalCups": "11",
+        "internationalCups": "5",
+        "stadiumName": "Casa Blanca",
+        "city": "Quito"
+    }
+]

@@ -1,0 +1,61 @@
+<h3>Edit Team</h3>
+<div class="row">
+    <form action="/teams/{{team._id}}" method="POST" class="col s12">
+
+        <input type="hidden" name="_method" value="PUT">
+        
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="name" name="name" value="{{team.name}}">
+                <label for="name">Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="foundationDate" name="foundationDate" value="{{team.foundationDate}}">
+                <label for="foundationDate">Foundation Date</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="website" name="website" value="{{team.website}}">
+                <label for="website">Website</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="number" id="nationalCups" name="nationalCups" value="{{team.nationalCups}}">
+                <label for="nationalCups">National Cups</label>
+            </div>
+        </div>        
+
+        <div class="row">
+            <div class="input-field">
+                <input type="number" id="internationalCups" name="internationalCups" value="{{team.internationalCups}}">
+                <label for="internationalCups">International Cups</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="stadiumName" name="stadiumName" value="{{team.stadiumName}}">
+                <label for="stadiumName">Stadium Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="city" name="city" value="{{team.city}}">
+                <label for="city">City</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>
